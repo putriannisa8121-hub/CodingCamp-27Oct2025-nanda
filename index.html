@@ -3,44 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List Website - Caashry</title>
+  <title>Todo List - Caashry</title>
 
-  <!-- CSS External File Link -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Tailwind CSS CDN Link -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="p-6 bg-gray-100">
-  <!-- Header Content -->
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+
   <header class="mb-6">
-    <h1 class="text-3xl font-bold text-center">Todo List Website - Caashry</h1>
+    <h1 class="text-3xl font-bold text-gray-800">Todo List Website - Caashry</h1>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-xl mx-auto bg-white p-4 rounded-lg shadow">
-    <!-- Form Section -->
-    <section>
-      <form class="flex gap-2 mb-4" onsubmit="event.preventDefault(); addTodo();">
-        <!-- Todo Input -->
-        <input 
-          class="border p-2 rounded w-2/3" 
-          type="text" 
-          id="todo-input" 
-          placeholder="Enter a new todo item" 
-          required
-        >
+  <main class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+    <form onsubmit="event.preventDefault(); addTodo();" class="flex gap-2 mb-4">
+      <input type="text" id="todo-input" placeholder="Enter a new todo item"
+        class="flex-1 border p-2 rounded" required>
+      <input type="date" id="todo-date" class="border p-2 rounded">
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+        Add
+      </button>
+    </form>
 
-        <!-- Date Input -->
-        <input 
-          class="border p-2 rounded w-1/3" 
-          type="date" 
-          id="todo-date"
-        >
+    <div class="flex justify-between mb-4">
+      <button id="clear-todos-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded">
+        Clear All
+      </button>
 
-        <!-- Add Todo Button -->
-        <button 
-          class="border p-2 rounded bg-green-500 text-white
+      <select id="filter-todos" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+      </select>
+    </div>
+
+    <ul id="todo-list" class="space-y-2"></ul>
+  </main>
+
+  <footer class="mt-6 text-gray-500 text-sm">
+    <p>&copy; 2024 Caashry Todo List</p>
+  </footer>
+
+  <script src="js\script.js"></script>
+</body>
+</html>
+
 
         
