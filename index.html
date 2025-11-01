@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List Website - Caashry</title>
+
+  <!-- CSS External File Link -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Tailwind CSS CDN Link -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-6 bg-gray-100">
+  <!-- Header Content -->
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-center">Todo List Website - Caashry</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-xl mx-auto bg-white p-4 rounded-lg shadow">
+    <!-- Form Section -->
+    <section>
+      <form class="flex gap-2 mb-4" onsubmit="event.preventDefault(); addTodo();">
+        <!-- Todo Input -->
+        <input 
+          class="border p-2 rounded w-2/3" 
+          type="text" 
+          id="todo-input" 
+          placeholder="Enter a new todo item" 
+          required
+        >
+
+        <!-- Date Input -->
+        <input 
+          class="border p-2 rounded w-1/3" 
+          type="date" 
+          id="todo-date"
+        >
+
+        <!-- Add Todo Button -->
+        <button 
+          class="border p-2 rounded bg-green-500 text-white
+
+        
